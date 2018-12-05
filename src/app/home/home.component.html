@@ -1,0 +1,34 @@
+
+<!--<table>
+<th>ID</th>
+<th>Name</th>
+<th>Color</th>
+<th>Photo</th>
+<th></th>
+<th></th>
+<tr *ngFor="let product of products">
+<td>{{product.id}}</td>
+<td>{{product.name}}</td>
+<td>{{product.color}}</td>
+<!--<td><img src="{{product.thumbnailUrl}}"></td>-->
+<!--<td><img [src]="product.thumbnailUrl"></td>
+<td (click)="deletProduct(product.id)"><a>DELETE</a></td>
+<td [routerLink]="['/updateProduct',product.id]"><a>UPDATE</a></td>
+</tr>
+</table>-->
+<div class="container">
+<div class="row products">
+    <div class="col-lg-3 product" *ngFor="let product of products">
+        <div class="card">
+            <img src="{{product.thumbnailUrl}}" />
+            <div class="card-body">
+              <h5 class="card-title">{{product.name}}</h5>
+              <p class="card-text">{{product.desc}}</p>
+              <p class="price">{{product.price}}</p>
+              <button  (click)="addNewProduct($event)" class="btn btn-primary">Add To Cart</button>
+            </div>
+          </div>
+    </div>
+</div>
+</div>
+<hr />
